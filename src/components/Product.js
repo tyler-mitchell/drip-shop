@@ -1,21 +1,23 @@
-import React from "react";
 import {
-  Card,
   Avatar,
-  CardHeader,
-  IconButton,
-  CardMedia,
-  CardContent,
+  Card,
   CardActionArea,
+  CardContent,
+  CardHeader,
+  CardMedia,
+  IconButton,
   makeStyles,
   Typography,
 } from "@material-ui/core";
 import { MoreVert as MoreVertIcon } from "@material-ui/icons";
-import shirt from "../assets/blank_shirt.png";
-import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { setCurrentShirtId } from "../app/shirtSlice";
 import { motion } from "framer-motion";
+import React from "react";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+
+import { setCurrentShirtId } from "../app/shirtSlice";
+import shirt from "../assets/blank_shirt.png";
+
 const useStyles = makeStyles({
   root: {
     maxWidth: 345,
@@ -49,7 +51,8 @@ const Product = (props) => {
   //       standard:
   //         "https://ih0.redbubble.net/image.412027703.8492/raf%2C220x294%2C075%2Cf%2Ce5d6c5%3Af62bbf65ee.lite-1u1.jpg",
   //     },
-  const shirtId = featured ? "shirt-featured" + index : "shirt" + index;
+  // const shirtId = featured ? "shirt-featured" + index : "shirt" + index;
+  const shirtId = "shirt" + index;
   return (
     <motion.div layoutId={shirtId}>
       <Card
@@ -76,6 +79,7 @@ const Product = (props) => {
                 currentShirtId: shirtId,
                 currentShirtTitle: props.title,
                 currentShirtImage: props.image,
+                currentShirtPrice: props.price,
               })
             );
             // navigate(shirtId, { state: props });
@@ -95,7 +99,8 @@ const Product = (props) => {
             }}
           >
             {" "}
-            <img
+            <motion.img
+              layoutId={shirtId + "image"}
               src={props.image}
               style={{
                 userSelect: "none",
@@ -107,14 +112,43 @@ const Product = (props) => {
               width="100%"
               alt="shirt"
             />
+            <motion.div
+              layoutId={shirtId + "price"}
+              style={{
+                position: "absolute",
+                bottom: "8px",
+                left: "6px",
+                padding: "5px",
+                borderRadius: "5px",
+                opacity: 0.9,
+                background: "white",
+              }}
+            >
+              <Typography
+                variant="subtile1"
+                style={{
+                  fontWeight: 650,
+                  fontSize: 16,
+                  fontFamily: "Inter, sans-serif",
+                }}
+                color="initial"
+              >
+                ${props?.price}
+              </Typography>
+            </motion.div>
           </div>
           {/* </div> */}
           <CardContent>
             <motion.div layoutId={shirtId + "title"}>
               <Typography
                 variant="subtile1"
-                style={{ fontWeight: 600, fontSize: 16 }}
+                style={{
+                  fontWeight: 600,
+                  fontSize: 16,
+                  fontFamily: "Inter, sans-serif",
+                }}
                 color="initial"
+                gutterBottom
               >
                 {props?.title}
               </Typography>

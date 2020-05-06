@@ -1,13 +1,13 @@
-import React from "react";
-import Typography from "@material-ui/core/Typography";
-import usePages from "../motion/usePages";
-import { Page } from "../motion/Page";
-import { data as productData } from "../app/data";
-
-import Product from "../components/Product";
 import IconButton from "@material-ui/core/IconButton";
+import Typography from "@material-ui/core/Typography";
 import LeftIcon from "@material-ui/icons/ChevronLeft";
 import RightIcon from "@material-ui/icons/ChevronRight";
+import React from "react";
+
+import { data as productData } from "../app/data";
+import Product from "../components/Product";
+import { Page } from "../motion/Page";
+import usePages from "../motion/usePages";
 
 const Banner = ({ title }) => {
   const data = productData.filter((v, index) => index <= 10);
@@ -20,7 +20,11 @@ const Banner = ({ title }) => {
         variant="h5"
         color="initial"
         gutterBottom
-        style={{ color: "rgba(0,0,0,0.8)", fontWeight: 500 }}
+        style={{
+          color: "rgba(0,0,0,0.8)",
+          fontWeight: 700,
+          fontFamily: "'Jura', sans-serif",
+        }}
       >
         {title}
       </Typography>

@@ -13,7 +13,12 @@ const Router = () => {
     <div>
       <AppBar position="fixed" color="transparent" elevation={0}>
         <Toolbar>
-          <Typography variant="h6">Drip Shop</Typography>
+          <Typography
+            variant="h6"
+            style={{ fontFamily: "'Orbitron', sans-serif" }}
+          >
+            Drip Shop
+          </Typography>
         </Toolbar>
       </AppBar>
       <Container

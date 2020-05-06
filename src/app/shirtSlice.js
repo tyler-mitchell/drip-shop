@@ -6,6 +6,7 @@ export const shirtSlice = createSlice({
     currentShirtId: false,
     currentShirtTitle: "",
     currentShirtImage: "",
+    currentShirtPrice: "",
   },
   reducers: {
     setCurrentShirtId: (state, action) => {
@@ -13,10 +14,12 @@ export const shirtSlice = createSlice({
         currentShirtId,
         currentShirtTitle,
         currentShirtImage,
+        currentShirtPrice,
       } = action.payload;
       state.currentShirtId = currentShirtId;
       state.currentShirtTitle = currentShirtTitle;
       state.currentShirtImage = currentShirtImage;
+      state.currentShirtPrice = currentShirtPrice;
     },
   },
 });

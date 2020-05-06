@@ -1,25 +1,30 @@
 export const data = [
   {
+    price: 28,
     title: "Almighty Ocean Unisex T-Shirt",
     image:
       "https://images.unsplash.com/photo-1494883759339-0b042055a4ee?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80",
   },
   {
+    price: 43,
     title: "Almighty Ocean Unisex T-Shirt",
     image:
       "https://images.unsplash.com/photo-1520975439795-26ee45a11903?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2695&q=80",
   },
   {
+    price: 22,
     title: "Almighty Ocean Unisex T-Shirt",
     image:
       "https://images.unsplash.com/photo-1508427953056-b00b8d78ebf5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
   },
   {
+    price: 28,
     title: "Almighty Ocean Unisex T-Shirt",
     image:
       "https://images.unsplash.com/photo-1553754538-466add009c05?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1495&q=80",
   },
   {
+    price: 28,
     title: "Almighty Ocean Unisex T-Shirt",
     image:
       "https://images.unsplash.com/photo-1556217477-d325251ece38?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=962&q=80",
@@ -30,21 +35,25 @@ export const data = [
       "https://images.unsplash.com/photo-1542329799-fa08b82df09c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80",
   },
   {
+    price: 36,
     title: "Almighty Ocean Unisex T-Shirt",
     image:
       "https://images.unsplash.com/photo-1552642986-ccb41e7059e7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80",
   },
   {
+    price: 18,
     title: "Almighty Ocean Unisex T-Shirt",
     image:
       "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80",
   },
   {
+    price: 20,
     title: "Almighty Ocean Unisex T-Shirt",
     image:
       "https://images.unsplash.com/photo-1572708609022-9689cecb4218?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80",
   },
   {
+    price: 24,
     title: "Almighty Ocean Unisex T-Shirt",
     image:
       "https://images.unsplash.com/photo-1553983712-12df6688a7b6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80",
@@ -55,134 +64,158 @@ export const data = [
       "https://images.unsplash.com/photo-1507114845806-0347f6150324?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80",
   },
   {
+    price: 22,
     title: "Almighty Ocean Unisex T-Shirt",
     image:
       "https://images.unsplash.com/photo-1570466541683-7b637357234d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
   },
   {
+    price: 28,
     title: "Almighty Ocean Unisex T-Shirt",
     image:
       "https://images.unsplash.com/photo-1543501527-cf6611f77938?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
   },
   {
+    price: 18,
     title: "Almighty Ocean Unisex T-Shirt",
     image:
       "https://images.unsplash.com/photo-1572708609421-8eae59509dec?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80",
   },
   {
+    price: 28,
     title: "Almighty Ocean Unisex T-Shirt",
     image:
       "https://images.unsplash.com/photo-1558471952-13cf349a1cc4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80",
   },
   {
+    price: 28,
     title: "Almighty Ocean Unisex T-Shirt",
     image:
       "https://images.unsplash.com/photo-1568563680125-9a2093380e02?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80",
   },
   {
+    price: 28,
     title: "Almighty Ocean Unisex T-Shirt",
     image:
       "https://images.unsplash.com/photo-1566360293735-094226a5df91?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80",
   },
   {
+    price: 28,
     title: "Almighty Ocean Unisex T-Shirt",
     image:
       "https://images.unsplash.com/photo-1503341338985-c0477be52513?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
   },
   {
+    price: 28,
     title: "Almighty Ocean Unisex T-Shirt",
     image:
       "https://images.unsplash.com/photo-1565128354282-a6390fc125b2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80",
   },
   {
+    price: 28,
     title: "Almighty Ocean Unisex T-Shirt",
     image:
       "https://images.unsplash.com/photo-1553307879-79d578bb97f4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=570&q=80",
   },
   {
+    price: 28,
     title: "Almighty Ocean Unisex T-Shirt",
     image:
       "https://images.unsplash.com/photo-1484517186945-df8151a1a871?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=987&q=80",
   },
   {
+    price: 28,
     title: "Almighty Ocean Unisex T-Shirt",
     image:
       "https://images.unsplash.com/photo-1497361727480-725cf2c9427d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80",
     cat_context: "belt",
   },
   {
+    price: 28,
     title: "Almighty Ocean Unisex T-Shirt",
     image:
       "https://images.unsplash.com/photo-1568749750364-053fd74b4115?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
     cat_context: "belt",
   },
   {
+    price: 28,
     title: "Almighty Ocean Unisex T-Shirt",
     image:
       "https://images.unsplash.com/photo-1468606069560-ce4e8c1b1fe9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1652&q=80",
     cat_context: "hat",
   },
   {
+    price: 28,
     title: "Almighty Ocean Unisex T-Shirt",
     image:
       "https://images.unsplash.com/photo-1500964935344-6219dea133e4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1001&q=80",
     cat_context: "hat",
   },
   {
+    price: 28,
     title: "Almighty Ocean Unisex T-Shirt",
     image:
       "https://images.unsplash.com/photo-1505632958218-4f23394784a6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
     cat_context: "tshirt",
   },
   {
+    price: 28,
     title: "Almighty Ocean Unisex T-Shirt",
     image:
       "https://images.unsplash.com/photo-1490551632573-78c6c247f5d3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80",
     cat_context: "tshirt",
   },
   {
+    price: 28,
     title: "Almighty Ocean Unisex T-Shirt",
     image:
       "https://images.unsplash.com/photo-1583431339815-df9893d78b38?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2921&q=80",
     cat_context: "tshirt",
   },
   {
+    price: 28,
     title: "Almighty Ocean Unisex T-Shirt",
     image:
       "https://images.unsplash.com/photo-1583690297711-7b76731f9c6e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80",
     cat_context: "tshirt",
   },
   {
+    price: 28,
     title: "Almighty Ocean Unisex T-Shirt",
     image:
       "https://images.unsplash.com/photo-1552573102-2b44b44d85b5?ixlib=rb-1.2.1&auto=format&fit=crop&w=2734&q=80",
     cat_context: "tshirt",
   },
   {
+    price: 28,
     title: "Almighty Ocean Unisex T-Shirt",
     image:
       "https://images.unsplash.com/photo-1556487697-37357ac9c309?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80",
     cat_context: "tshirt",
   },
   {
+    price: 28,
     title: "Almighty Ocean Unisex T-Shirt",
     image:
       "https://images.unsplash.com/photo-1553231208-811608243e3f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=976&q=80",
     cat_context: "tshirt",
   },
   {
+    price: 28,
     title: "Almighty Ocean Unisex T-Shirt",
     image:
       "https://images.unsplash.com/photo-1570472792550-4362980b7009?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=604&q=80",
     cat_context: "tshirt",
   },
   {
+    price: 28,
     title: "Almighty Ocean Unisex T-Shirt",
     image:
       "https://images.unsplash.com/photo-1572980379456-86efa935c95e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80",
     cat_context: "tshirt",
   },
   {
+    price: 28,
     title: "Almighty Ocean Unisex T-Shirt",
     image:
       "https://images.unsplash.com/photo-1569598409550-55537a83a662?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80",
