@@ -7,6 +7,7 @@ import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 import Banner from "../components/Banner";
 import ShirtView from "./ShirtView";
+
 const Router = () => {
   return (
     <div>
@@ -25,8 +26,9 @@ const Router = () => {
         }}
       >
         <Routes>
-          <Route path=":shirtId" element={<ShirtView />} />
-          <Route path="" element={<StoreView />}></Route>
+          <Route path="" element={<StoreView />}>
+            <Route path=":shirtId" element={<ShirtView />} />
+          </Route>
         </Routes>
       </Container>
     </div>

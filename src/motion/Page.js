@@ -1,6 +1,7 @@
 import * as React from "react";
 import { motion, useMotionValue, MotionValue } from "framer-motion";
 import { defaultEffects } from "./default-effects";
+
 /**
  * Page
  *

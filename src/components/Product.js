@@ -5,12 +5,17 @@ import {
   CardHeader,
   IconButton,
   CardMedia,
+  CardContent,
   CardActionArea,
   makeStyles,
+  Typography,
 } from "@material-ui/core";
 import { MoreVert as MoreVertIcon } from "@material-ui/icons";
 import shirt from "../assets/blank_shirt.png";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setCurrentShirtId } from "../app/shirtSlice";
+import { motion } from "framer-motion";
 const useStyles = makeStyles({
   root: {
     maxWidth: 345,
@@ -19,47 +24,105 @@ const useStyles = makeStyles({
     height: 140,
   },
 });
-const Product = ({ id, ...props }) => {
-  console.log(`⭐: Product -> id`, id);
-  const { title, subtitle, image, size } = props;
+const Product = (props) => {
+  const { title, subtitle, image, size, index, featured } = props;
   const classes = useStyles();
+  let dispatch = useDispatch();
   let navigate = useNavigate();
+  //   work_id: 27578492,
+  //   rank: 18,
+  //   ia_code: "u-tee-slim-crew",
+  //   artist: "ilustrata",
+  //   full_title: "The Great Ramen off Kanagawa Unisex T-Shirt",
+  //   work_title: "The Great Ramen off Kanagawa",
+  //   product_url:
+  //     "/people/ilustrata/works/27578492-the-great-ramen-off-kanagawa?cat_context=m-tees&grid_pos=18&p=t-shirt&rbs=61e2776b-e1db-4c1d-985d-a26917552491&ref=shop_grid&style=mens",
+  //   is_lazy: true,
+  //   images: {
+  //     thumbnail_url: {
+  //       standard:
+  //         "https://ih1.redbubble.net/image.412027703.8492/ra%2Cunisex_tshirt%2Cx925%2Ce5d6c5%3Af62bbf65ee%2Cfront-c%2C217%2C190%2C210%2C230-bg%2Cf8f8f8.lite-1u1.jpg",
+  //       retina:
+  //         "https://ih0.redbubble.net/image.412027703.8492/ra%2Cunisex_tshirt%2Cx1850%2Ce5d6c5%3Af62bbf65ee%2Cfront-c%2C435%2C380%2C420%2C460-bg%2Cf8f8f8.lite-1u1.jpg",
+  //     },
+  //     thumbnail_hover_url: {
+  //       standard:
+  //         "https://ih0.redbubble.net/image.412027703.8492/raf%2C220x294%2C075%2Cf%2Ce5d6c5%3Af62bbf65ee.lite-1u1.jpg",
+  //     },
+  const shirtId = featured ? "shirt-featured" + index : "shirt" + index;
   return (
-    <Card
-      variant="outlined"
-      style={{
-        alignItems: "center",
-        flexDirection: "column",
-        pointerEvents: "cursor",
-      }}
-      className={classes.root}
-    >
-      <CardActionArea
+    <motion.div layoutId={shirtId}>
+      <Card
         style={{
           alignItems: "center",
           flexDirection: "column",
-          display: "flex",
+          width: "100%",
+          maxWidth: "196px",
+          borderRadius: "10px",
+          pointerEvents: "cursor",
         }}
-        onClick={() => {
-          navigate(id, { state: props });
-        }}
+        elevation={0}
+        className={classes.root}
       >
-        {/* <div style={{ borderRadius: "10px", background: "#fafafa" }}> */}
-        <div
+        <CardActionArea
           style={{
-            height: "200px",
-            width: "200px",
-            position: "relative",
-            objectFit: "cover",
+            alignItems: "center",
+            flexDirection: "column",
+            display: "flex",
+          }}
+          onClick={() => {
+            dispatch(
+              setCurrentShirtId({
+                currentShirtId: shirtId,
+                currentShirtTitle: props.title,
+                currentShirtImage: props.image,
+              })
+            );
+            // navigate(shirtId, { state: props });
           }}
         >
-          {" "}
-          <img src={shirt} height="100%" alt="shirt" />
-        </div>
-        {/* </div> */}
-        hello
-      </CardActionArea>
-    </Card>
+          {/* <div style={{ borderRadius: "10px", background: "#fafafa" }}> */}
+          <div
+            style={{
+              // height: "150px",
+
+              position: "relative",
+              objectFit: "cover",
+              userSelect: "none",
+              borderRadius: "10px",
+
+              userDrag: "none",
+            }}
+          >
+            {" "}
+            <img
+              src={props.image}
+              style={{
+                userSelect: "none",
+                userDrag: "none",
+                pointerEvents: "none",
+                borderRadius: "10px",
+              }}
+              height="100%"
+              width="100%"
+              alt="shirt"
+            />
+          </div>
+          {/* </div> */}
+          <CardContent>
+            <motion.div layoutId={shirtId + "title"}>
+              <Typography
+                variant="subtile1"
+                style={{ fontWeight: 600, fontSize: 16 }}
+                color="initial"
+              >
+                {props?.title}
+              </Typography>
+            </motion.div>
+          </CardContent>
+        </CardActionArea>
+      </Card>
+    </motion.div>
   );
 };
 
