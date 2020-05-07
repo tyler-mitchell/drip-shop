@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "02faf79cbd889d0d1a3abac61c600076",
+    "revision": "d3490a871253510d25be60f3d468bb4d",
     "url": "/drip-shop/index.html"
   },
   {
-    "revision": "f9ed6e72b0c5e6644fdd",
+    "revision": "3c0fb203c3ff595046cb",
     "url": "/drip-shop/static/css/main.3d81fd4e.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/drip-shop/static/js/2.d6b955a1.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "f9ed6e72b0c5e6644fdd",
-    "url": "/drip-shop/static/js/main.ca50c81f.chunk.js"
+    "revision": "3c0fb203c3ff595046cb",
+    "url": "/drip-shop/static/js/main.6c0e6bae.chunk.js"
   },
   {
     "revision": "af8ee79fe0d7c562cc0e",
