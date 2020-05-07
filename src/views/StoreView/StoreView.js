@@ -20,12 +20,14 @@ import { Outlet } from "react-router-dom";
 import styled from "styled-components";
 
 import { data } from "../../app/data";
-import { setCurrentShirtId } from "../../app/shirtSlice";
+import { setCurrentShirtId, addToCart } from "../../app/shirtSlice";
 import Banner from "../../components/Banner";
 import Product from "../../components/Product";
 import SelectField from "../../components/SelectField";
 import CartIcon from "@material-ui/icons/ShoppingCartRounded";
+import RemoveCartIcon from "@material-ui/icons/RemoveShoppingCartRounded";
 import "./mason.css";
+import Cart from "../../components/Cart";
 
 const SingleModalContainer = styled.div`
   position: fixed;
@@ -38,6 +40,14 @@ const SingleModalContainer = styled.div`
   justify-content: center;
   z-index: 1000;
   align-items: center;
+`;
+const Underlined = styled(motion.div)`
+  width: 30px;
+  height: 28px;
+  border-radius: 4px;
+  z-index: 0;
+  background: black;
+  position: absolute;
 `;
 
 const ProductList = styled.div`
@@ -79,7 +89,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const colors = ["black", "white", "grey", "navyblue"];
+const colors = ["black", "white", "grey", "#0B76CF"];
 
 const StoreView = () => {
   const {
@@ -87,14 +97,17 @@ const StoreView = () => {
     currentShirtTitle,
     currentShirtImage,
     currentShirtPrice,
+    cart,
   } = useSelector((s) => s.shirt);
 
   const classes = useStyles();
+
   let dispatch = useDispatch();
   const [selectedColor, setSelectedColor] = React.useState(false);
+  const [selectedSize, setSelectedSize] = React.useState(false);
   const [openMenu, setOpenMenu] = React.useState(false);
   const ref = React.useRef();
-
+  const isInCart = cart.some((v) => v.shirtId === currentShirtId);
   useOnclickOutside(ref, () => {
     dispatch(setCurrentShirtId({ currentShirtId: false }));
   });
@@ -105,6 +118,7 @@ const StoreView = () => {
   const ProductCard = ({ index, data, width }) => (
     <Product index={index} key={"shirt" + index} {...data} />
   );
+
   return (
     <AnimateSharedLayout type="crossfade">
       <Banner title="Featured" />
@@ -231,22 +245,53 @@ const StoreView = () => {
                     enter={{ opacity: 0, y: 20 }}
                     transition={{ delay: 0.75 }}
                   >
-                    <motion.div style={{ display: "flex" }}>
-                      {colors.map((color) => (
-                        <motion.div
-                          style={{
-                            background: color,
-                            borderRadius: "50px",
-                            height: "20px",
-                            width: "20px",
-                            margin: "10px",
-                            border: "solid 2px rgba(0,0,0,0.8)",
-                          }}
-                        />
-                      ))}
-                    </motion.div>
+                    <AnimateSharedLayout>
+                      <motion.div
+                        style={{ display: "flex", position: "relative" }}
+                      >
+                        {colors.map((color, i) => (
+                          <motion.div
+                            animate
+                            key={i}
+                            style={{
+                              display: "flex",
+                              justifyContent: "center",
+                              flexDirection: "column",
+                              alignItems: "center",
+                            }}
+                            onClick={() => {
+                              setSelectedColor(i);
+                            }}
+                          >
+                            <motion.div
+                              whileHover={{ scale: 1.2 }}
+                              style={{
+                                background: color,
+                                borderRadius: "50px",
+                                height: "20px",
+                                width: "20px",
+                                margin: "3px 10px 3px 10px",
+                                border: "solid 2px rgba(0,0,0,0.8)",
+                                position: "relative",
+                                zIndex: 1,
+                              }}
+                            />
+                            {i === selectedColor && (
+                              <Underlined
+                                enter={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                layoutId="underline"
+                                className="underline"
+                                style={{ backgroundColor: "rgba(0,0,0,0.1)" }}
+                              />
+                            )}
+                          </motion.div>
+                        ))}
+                      </motion.div>
+                    </AnimateSharedLayout>
                     <SelectField
                       label="Sizes"
+                      setValue={setSelectedSize}
                       options={["S", "M", "L", "XL"]}
                       defaultValue="M"
                     />
@@ -265,18 +310,30 @@ const StoreView = () => {
                           exit={{ x: -30 }}
                           // layoutId={currentShirtId + "cartIcon"}
                         >
-                          <CartIcon style={{ color: "white" }} />
+                          {isInCart ? (
+                            <RemoveCartIcon style={{ color: "white" }} />
+                          ) : (
+                            <CartIcon style={{ color: "white" }} />
+                          )}
                         </motion.div>
                       }
                       style={{
                         fontWeight: 550,
                         width: "100%",
                         color: "white",
-                        background: "rgba(0,0,0,0.85)",
+                        background: !isInCart ? "rgba(0,0,0,0.85)" : "#f34444",
                       }}
                       variant="contained"
+                      onClick={() => {
+                        dispatch(
+                          addToCart({
+                            color: selectedColor,
+                            size: selectedSize,
+                          })
+                        );
+                      }}
                     >
-                      Add to cart
+                      {isInCart ? "Remove from cart" : "Add to cart"}
                     </Button>
                   </motion.div>
                 </div>

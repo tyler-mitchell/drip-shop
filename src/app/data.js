@@ -7,7 +7,6 @@ export const data = [
   },
   {
     price: 43,
-    title: "Almighty Ocean Unisex T-Shirt",
     image:
       "https://images.unsplash.com/photo-1520975439795-26ee45a11903?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2695&q=80",
   },
@@ -174,7 +173,7 @@ export const data = [
   },
   {
     price: 28,
-    title: "Almighty Ocean Unisex T-Shirt",
+    title: "Unisex T-Shirt",
     image:
       "https://images.unsplash.com/photo-1583690297711-7b76731f9c6e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80",
     cat_context: "tshirt",
@@ -195,7 +194,7 @@ export const data = [
   },
   {
     price: 28,
-    title: "Almighty Ocean Unisex T-Shirt",
+    title: "The Great Ramen off Kanagawa Unisex T-Shirt",
     image:
       "https://images.unsplash.com/photo-1553231208-811608243e3f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=976&q=80",
     cat_context: "tshirt",

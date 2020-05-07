@@ -55,11 +55,16 @@ const useBorderSelectStyles = makeStyles(({ palette }) => ({
 }));
 // Original design here: https://github.com/siriwatknp/mui-treasury/issues/541
 
-const BorderSelect = ({ label, options, defaultValue }) => {
+const BorderSelect = ({ label, options, defaultValue, setValue }) => {
   const [val, setVal] = useState(defaultValue);
 
   const handleChange = (event) => {
-    setVal(event.target.value);
+    if (setValue) {
+      setVal(event.target.value);
+      setValue(event.target.value);
+    } else {
+      setVal(event.target.value);
+    }
   };
 
   const borderSelectClasses = useBorderSelectStyles();

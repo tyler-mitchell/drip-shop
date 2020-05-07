@@ -1,12 +1,13 @@
-import React from "react";
-import { Routes, Route } from "react-router-dom";
-import StoreView from "./StoreView";
 import AppBar from "@material-ui/core/AppBar";
+import Container from "@material-ui/core/Container";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
-import Container from "@material-ui/core/Container";
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+
 import Banner from "../components/Banner";
 import ShirtView from "./ShirtView";
+import StoreView from "./StoreView";
 
 const Router = () => {
   return (

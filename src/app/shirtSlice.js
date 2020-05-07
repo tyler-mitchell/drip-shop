@@ -7,6 +7,10 @@ export const shirtSlice = createSlice({
     currentShirtTitle: "",
     currentShirtImage: "",
     currentShirtPrice: "",
+    currentShirtQuantity: "",
+    currentShirtColor: "black",
+
+    cart: [],
   },
   reducers: {
     setCurrentShirtId: (state, action) => {
@@ -21,9 +25,34 @@ export const shirtSlice = createSlice({
       state.currentShirtImage = currentShirtImage;
       state.currentShirtPrice = currentShirtPrice;
     },
+    addToCart: (state, action) => {
+      const { size, color } = action.payload;
+      let index = false;
+      if (
+        !state.cart.some((e, i) => {
+          const cond = e?.shirtId === state.currentShirtId;
+          index = cond ? i : false;
+          return cond;
+        })
+      ) {
+        state.cart.push({
+          shirtId: state.currentShirtId,
+          title: state.currentShirtTitle,
+          image: state.currentShirtImage,
+          price: state.currentShirtPrice,
+          quantity: state.currentShirtQuantity,
+          color: color,
+          size: size,
+        });
+      } else {
+        if (index >= 0) {
+          state.cart.splice(index, 1);
+        }
+      }
+    },
   },
 });
 
-export const { setCurrentShirtId } = shirtSlice.actions;
+export const { setCurrentShirtId, addToCart } = shirtSlice.actions;
 
 export default shirtSlice.reducer;
