@@ -13,8 +13,23 @@ import Close from "@material-ui/icons/Close";
 import DailySizeSelector from "./DailySizeSelector";
 import DailyInteger from "./DailyInteger";
 import { useSelector, useDispatch } from "react-redux";
-import {} from "../../../app/shirtSlice";
 
+import {} from "../../../app/shirtSlice";
+const useModalStyles = makeStyles((theme) => ({
+  modal: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  paper: {
+    backgroundColor: theme.palette.background.paper,
+    borderRadius: "15px",
+
+    boxShadow:
+      "0 12px 28px 0 rgba(0, 0, 0, 0.06), 0 2px 4px 0 rgba(0, 0, 0, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.5)",
+    padding: theme.spacing(2, 4, 3),
+  },
+}));
 const useStyles = makeStyles(({ palette, breakpoints }) => ({
   heading: {
     fontWeight: 900,
@@ -48,47 +63,9 @@ const useStyles = makeStyles(({ palette, breakpoints }) => ({
   },
 }));
 
-function createData(image, name, descr, size, quantity, totalPrice) {
-  return { image, name, descr, size, quantity, totalPrice };
-}
-
-const rows = [
-  createData(
-    "https://dynamic.zacdn.com/TIqU0jk90hPxnuO44NnNXO4B1AU=/fit-in/346x500/filters:quality(95):fill(ffffff)/http://static.sg.zalora.net/p/fila-4662-609589-1.jpg",
-    "Henry T-Shirt",
-    "White, Screen",
-    "S",
-    2,
-    "$39.98"
-  ),
-  createData(
-    "https://www.hybridoutfitters.com/wp-content/uploads/2019/11/147.jpg",
-    "Stripe Tee",
-    "ocean, stripe",
-    "M",
-    3,
-    "$100"
-  ),
-  createData(
-    "https://gloimg.zafcdn.com/zaful/pdm-product-pic/Clothing/2019/09/18/goods-first-img/1568766431491927776.jpg",
-    "Sweater Hood",
-    "Light Brown, Wool",
-    "S",
-    1,
-    "$39.99"
-  ),
-  createData(
-    "https://l.lnwfile.com/_resize_images/600/600/w1/nh/5z.jpg",
-    "Jackboot",
-    "Brown, Leather",
-    10.5,
-    1,
-    "$69.99"
-  ),
-];
-
 const DailyCart = () => {
   const styles = useStyles();
+  const modalStyles = useModalStyles();
   let { cart } = useSelector((s) => s.shirt);
   return (
     <Box pt={{ xs: 2, sm: 4, md: 6 }}>

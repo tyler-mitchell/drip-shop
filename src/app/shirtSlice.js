@@ -9,6 +9,7 @@ export const shirtSlice = createSlice({
     currentShirtPrice: "",
     currentShirtQuantity: "",
     currentShirtColor: "black",
+    cartOpen: false,
 
     cart: [],
   },
@@ -24,6 +25,9 @@ export const shirtSlice = createSlice({
       state.currentShirtTitle = currentShirtTitle;
       state.currentShirtImage = currentShirtImage;
       state.currentShirtPrice = currentShirtPrice;
+    },
+    toggleCart: (state) => {
+      state.cartOpen = !state.cartOpen;
     },
     addToCart: (state, action) => {
       const { size, color } = action.payload;
@@ -53,6 +57,6 @@ export const shirtSlice = createSlice({
   },
 });
 
-export const { setCurrentShirtId, addToCart } = shirtSlice.actions;
+export const { setCurrentShirtId, addToCart, toggleCart } = shirtSlice.actions;
 
 export default shirtSlice.reducer;

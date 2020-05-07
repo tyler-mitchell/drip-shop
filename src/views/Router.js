@@ -11,9 +11,13 @@ import StoreView from "./StoreView";
 import Button from "@material-ui/core/Button";
 import Badge from "@material-ui/core/Badge";
 import CartIcon from "@material-ui/icons/ShoppingBasketRounded";
-import { useSelector } from "react-redux";
+import { AnimatePresence, AnimateSharedLayout, motion } from "framer-motion";
+import { toggleCart } from "../app/shirtSlice";
+import { useSelector, useDispatch } from "react-redux";
+import Cart from "../components/Cart";
 const Router = () => {
   const { cart } = useSelector((s) => s.shirt);
+  const dispatch = useDispatch();
   return (
     <div>
       <AppBar
@@ -30,25 +34,30 @@ const Router = () => {
             Drip Shop
           </Typography>
           <div style={{ flexGrow: 1 }} />
-
-          <Button
-            startIcon={
-              <Badge badgeContent={cart.length}>
-                <CartIcon />{" "}
-              </Badge>
-            }
-            variant="text"
-            color="default"
-            size="large"
-            style={{
-              fontFamily: "'Orbitron', sans-serif",
-              textTransform: "none",
-              marginRight: "30px",
-              fontWeight: 650,
-            }}
-          >
-            My Cart
-          </Button>
+          <AnimateSharedLayout>
+            <Button
+              onClick={() => {
+                dispatch(toggleCart());
+              }}
+              startIcon={
+                <Badge badgeContent={cart.length}>
+                  <CartIcon />{" "}
+                </Badge>
+              }
+              variant="text"
+              color="default"
+              size="large"
+              style={{
+                fontFamily: "'Orbitron', sans-serif",
+                textTransform: "none",
+                marginRight: "30px",
+                fontWeight: 650,
+              }}
+            >
+              My Cart
+            </Button>
+            <Cart />
+          </AnimateSharedLayout>
         </Toolbar>
       </AppBar>
       <Container

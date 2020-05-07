@@ -27,7 +27,6 @@ import SelectField from "../../components/SelectField";
 import CartIcon from "@material-ui/icons/ShoppingCartRounded";
 import RemoveCartIcon from "@material-ui/icons/RemoveShoppingCartRounded";
 import "./mason.css";
-import Cart from "../../components/Cart";
 
 const SingleModalContainer = styled.div`
   position: fixed;
@@ -118,7 +117,7 @@ const StoreView = () => {
           ))}
         </Masonry>
       </Container>
-      <Cart />
+
       <AnimatePresence>
         {currentShirtId !== false && (
           <motion.div
