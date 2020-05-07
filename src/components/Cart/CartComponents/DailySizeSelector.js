@@ -4,8 +4,13 @@ import ButtonBase from "@material-ui/core/ButtonBase";
 import KeyboardArrowDown from "@material-ui/icons/KeyboardArrowDown";
 
 const useStyles = makeStyles(({ palette }) => ({
-  btnBase: {
-    borderRadius: 40,
+  size: {
+    borderRadius: 10,
+    textAlign: "center",
+    background: "rgba(0,0,0,0.8)",
+    padding: "8px 3px 8px 3px",
+    fontWeight: 600,
+    color: "white",
   },
   root: {
     display: "inline-flex",
@@ -30,11 +35,11 @@ const useStyles = makeStyles(({ palette }) => ({
 const DailySizeSelector = ({ children }) => {
   const styles = useStyles();
   return (
-    <ButtonBase className={styles.btnBase}>
-      <div className={styles.root}>
+    <>
+      <div className={styles.size}>
         {children} <KeyboardArrowDown className={styles.icon} />
       </div>
-    </ButtonBase>
+    </>
   );
 };
 

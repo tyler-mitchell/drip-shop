@@ -12,6 +12,8 @@ import IconButton from "@material-ui/core/IconButton";
 import Close from "@material-ui/icons/Close";
 import DailySizeSelector from "./DailySizeSelector";
 import DailyInteger from "./DailyInteger";
+import { useSelector, useDispatch } from "react-redux";
+import {} from "../../../app/shirtSlice";
 
 const useStyles = makeStyles(({ palette, breakpoints }) => ({
   heading: {
@@ -87,6 +89,7 @@ const rows = [
 
 const DailyCart = () => {
   const styles = useStyles();
+  let { cart } = useSelector((s) => s.shirt);
   return (
     <Box pt={{ xs: 2, sm: 4, md: 6 }}>
       <Typography className={styles.heading} variant={"h1"} gutterBottom>
@@ -98,36 +101,34 @@ const DailyCart = () => {
             <TableRow>
               <TableCell>Product</TableCell>
               <TableCell>Size</TableCell>
-              <TableCell>Quantity</TableCell>
+
               <TableCell>Total Price</TableCell>
               <TableCell>&nbsp;</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
-            {rows.map((row) => (
-              <TableRow key={row.name}>
+            {cart.map((row) => (
+              <TableRow key={row.title}>
                 <TableCell component="th" scope="row">
                   <Box display={"flex"} alignItems={"center"}>
                     <Box width={80} height={80}>
                       <img
                         className={styles.image}
-                        alt={row.name}
+                        alt={row.title}
                         src={row.image}
                       />
                     </Box>
                     <Box ml={2}>
-                      <p className={styles.name}>{row.name}</p>
-                      <span className={styles.descr}>{row.descr}</span>
+                      <p className={styles.name}>{row.title}</p>
+                      <span className={styles.descr}>{row.color}</span>
                     </Box>
                   </Box>
                 </TableCell>
                 <TableCell>
                   <DailySizeSelector>{row.size}</DailySizeSelector>
                 </TableCell>
-                <TableCell>
-                  <DailyInteger>{row.quantity}</DailyInteger>
-                </TableCell>
-                <TableCell>{row.totalPrice}</TableCell>
+
+                <TableCell>${row.price}</TableCell>
                 <TableCell>
                   <IconButton>
                     <Close />

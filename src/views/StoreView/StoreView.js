@@ -118,7 +118,7 @@ const StoreView = () => {
           ))}
         </Masonry>
       </Container>
-
+      <Cart />
       <AnimatePresence>
         {currentShirtId !== false && (
           <motion.div
@@ -159,8 +159,8 @@ const ProductViewContent = React.memo(
     const classes = useStyles();
 
     let dispatch = useDispatch();
-    const [selectedColor, setSelectedColor] = React.useState(false);
-    const [selectedSize, setSelectedSize] = React.useState(false);
+    const [selectedColor, setSelectedColor] = React.useState("black");
+    const [selectedSize, setSelectedSize] = React.useState("M");
     const [openMenu, setOpenMenu] = React.useState(false);
     const ref = React.useRef();
     const isInCart = cart.some((v) => v.shirtId === currentShirtId);
@@ -182,172 +182,179 @@ const ProductViewContent = React.memo(
 
         // style={{ height: "60vh", width: "60vh" }}
       >
-        <motion.div
+        <Grid
+          container
+          spacing={2}
+          wrap="nowrap"
           // layoutId={currentShirtId + "title"}
-          style={{ display: "flex", position: "relative" }}
+          style={{ position: "relative" }}
         >
-          <div
-            style={{
-              objectFit: "cover",
-              width: "400px",
-              height: "400px",
-              position: "relative",
-            }}
-            // ref={ref}
-          >
-            <motion.img
-              layoutId={currentShirtId + "image"}
-              src={currentShirtImage}
-              width="200px"
-              style={{ borderRadius: "10px" }}
-              alt="product"
-            />
-            <motion.div
-              layoutId={currentShirtId + "price"}
+          <Grid item>
+            <div
               style={{
-                position: "absolute",
-                top: "8px",
-                left: "6px",
-                padding: "5px",
-                borderRadius: "5px",
-                opacity: 0.9,
-                background: "white",
+                objectFit: "cover",
+                // width: "400px",
+                // height: "400px",
+                position: "relative",
               }}
+              // ref={ref}
             >
-              <Typography
-                variant="subtile1"
+              <motion.img
+                layoutId={currentShirtId + "image"}
+                src={currentShirtImage}
+                width="200px"
+                style={{ borderRadius: "10px" }}
+                alt="product"
+              />
+              <motion.div
+                layoutId={currentShirtId + "price"}
                 style={{
-                  fontWeight: 650,
-                  fontSize: 16,
-                  fontFamily: "Inter, sans-serif",
+                  position: "absolute",
+                  top: "8px",
+                  left: "6px",
+                  padding: "5px",
+                  borderRadius: "5px",
+                  opacity: 0.9,
+                  background: "white",
                 }}
-                color="initial"
               >
-                ${currentShirtPrice}
-              </Typography>
-            </motion.div>
-          </div>
-          <div style={{ display: "flex", flexDirection: "column" }}>
-            <IconButton
-              style={{
-                position: "absolute",
-                zIndex: 3200,
-                top: -10,
-                right: -20,
-              }}
-              onClick={(e) => {
-                handleClose();
-              }}
-            >
-              <Close />
-            </IconButton>
-            <motion.div layoutId={currentShirtId + "title"}>
-              <Typography
-                variant="h5"
-                style={{ fontWeight: 600 }}
-                color="initial"
-                gutterBottom
+                <Typography
+                  variant="subtile1"
+                  style={{
+                    fontWeight: 650,
+                    fontSize: 16,
+                    fontFamily: "Inter, sans-serif",
+                  }}
+                  color="initial"
+                >
+                  ${currentShirtPrice}
+                </Typography>
+              </motion.div>
+            </div>
+          </Grid>
+          <Grid item container>
+            <div style={{ display: "flex", flexDirection: "column" }}>
+              <IconButton
+                style={{
+                  position: "absolute",
+                  zIndex: 3200,
+                  top: -10,
+                  right: -20,
+                }}
+                onClick={(e) => {
+                  handleClose();
+                }}
               >
-                {currentShirtTitle}
-              </Typography>
-            </motion.div>
-            <motion.div
-              animate={{ opacity: 1, y: 0 }}
-              initial={{ opacity: 0, y: 20 }}
-              enter={{ opacity: 0, y: 20 }}
-              transition={{ delay: 0.75 }}
-            >
-              <AnimateSharedLayout>
-                <motion.div style={{ display: "flex", position: "relative" }}>
-                  {colors.map((color, i) => (
+                <Close />
+              </IconButton>
+              <motion.div layoutId={currentShirtId + "title"}>
+                <Typography
+                  variant="h5"
+                  style={{ fontWeight: 600 }}
+                  color="initial"
+                  gutterBottom
+                >
+                  {currentShirtTitle}
+                </Typography>
+              </motion.div>
+              <motion.div
+                animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: 20 }}
+                enter={{ opacity: 0, y: 20 }}
+                transition={{ delay: 0.75 }}
+              >
+                <AnimateSharedLayout>
+                  <motion.div style={{ display: "flex", position: "relative" }}>
+                    {colors.map((color, i) => (
+                      <motion.div
+                        animate
+                        key={i}
+                        style={{
+                          display: "flex",
+                          justifyContent: "center",
+                          flexDirection: "column",
+                          alignItems: "center",
+                        }}
+                        onClick={() => {
+                          setSelectedColor(i);
+                        }}
+                      >
+                        <motion.div
+                          whileHover={{ scale: 1.2 }}
+                          style={{
+                            background: color,
+                            borderRadius: "50px",
+                            height: "20px",
+                            width: "20px",
+                            margin: "3px 10px 3px 10px",
+                            border: "solid 2px rgba(0,0,0,0.8)",
+                            position: "relative",
+                            zIndex: 1,
+                          }}
+                        />
+                        {i === selectedColor && (
+                          <Underlined
+                            enter={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            layoutId="underline"
+                            className="underline"
+                            style={{ backgroundColor: "rgba(0,0,0,0.1)" }}
+                          />
+                        )}
+                      </motion.div>
+                    ))}
+                  </motion.div>
+                </AnimateSharedLayout>
+                <SelectField
+                  label="Sizes"
+                  setValue={setSelectedSize}
+                  options={["S", "M", "L", "XL"]}
+                  defaultValue="M"
+                />
+
+                <div style={{ marginBottom: "10px" }} />
+                <Button
+                  disableElevation
+                  size="large"
+                  startIcon={
                     <motion.div
-                      animate
-                      key={i}
                       style={{
                         display: "flex",
-                        justifyContent: "center",
-                        flexDirection: "column",
                         alignItems: "center",
+                        justifyContent: "center",
                       }}
-                      onClick={() => {
-                        setSelectedColor(i);
-                      }}
+                      exit={{ x: -30 }}
+                      // layoutId={currentShirtId + "cartIcon"}
                     >
-                      <motion.div
-                        whileHover={{ scale: 1.2 }}
-                        style={{
-                          background: color,
-                          borderRadius: "50px",
-                          height: "20px",
-                          width: "20px",
-                          margin: "3px 10px 3px 10px",
-                          border: "solid 2px rgba(0,0,0,0.8)",
-                          position: "relative",
-                          zIndex: 1,
-                        }}
-                      />
-                      {i === selectedColor && (
-                        <Underlined
-                          enter={{ opacity: 0 }}
-                          animate={{ opacity: 1 }}
-                          layoutId="underline"
-                          className="underline"
-                          style={{ backgroundColor: "rgba(0,0,0,0.1)" }}
-                        />
+                      {isInCart ? (
+                        <RemoveCartIcon style={{ color: "white" }} />
+                      ) : (
+                        <CartIcon style={{ color: "white" }} />
                       )}
                     </motion.div>
-                  ))}
-                </motion.div>
-              </AnimateSharedLayout>
-              <SelectField
-                label="Sizes"
-                setValue={setSelectedSize}
-                options={["S", "M", "L", "XL"]}
-                defaultValue="M"
-              />
-
-              <div style={{ marginBottom: "10px" }} />
-              <Button
-                disableElevation
-                size="large"
-                startIcon={
-                  <motion.div
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                    }}
-                    exit={{ x: -30 }}
-                    // layoutId={currentShirtId + "cartIcon"}
-                  >
-                    {isInCart ? (
-                      <RemoveCartIcon style={{ color: "white" }} />
-                    ) : (
-                      <CartIcon style={{ color: "white" }} />
-                    )}
-                  </motion.div>
-                }
-                style={{
-                  fontWeight: 550,
-                  width: "100%",
-                  color: "white",
-                  background: !isInCart ? "rgba(0,0,0,0.85)" : "#f34444",
-                }}
-                variant="contained"
-                onClick={() => {
-                  dispatch(
-                    addToCart({
-                      color: selectedColor,
-                      size: selectedSize,
-                    })
-                  );
-                }}
-              >
-                {isInCart ? "Remove from cart" : "Add to cart"}
-              </Button>
-            </motion.div>
-          </div>
-        </motion.div>
+                  }
+                  style={{
+                    fontWeight: 550,
+                    width: "100%",
+                    color: "white",
+                    background: !isInCart ? "rgba(0,0,0,0.85)" : "#f34444",
+                  }}
+                  variant="contained"
+                  onClick={() => {
+                    dispatch(
+                      addToCart({
+                        color: selectedColor,
+                        size: selectedSize,
+                      })
+                    );
+                  }}
+                >
+                  {isInCart ? "Remove from cart" : "Add to cart"}
+                </Button>
+              </motion.div>
+            </div>
+          </Grid>{" "}
+        </Grid>
       </ModalContent>
     );
   }
