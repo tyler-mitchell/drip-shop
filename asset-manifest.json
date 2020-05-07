@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/drip-shop/static/css/main.3d81fd4e.chunk.css",
+    "main.js": "/drip-shop/static/js/main.ca50c81f.chunk.js",
+    "main.js.map": "/drip-shop/static/js/main.ca50c81f.chunk.js.map",
+    "runtime-main.js": "/drip-shop/static/js/runtime-main.f6dae082.js",
+    "runtime-main.js.map": "/drip-shop/static/js/runtime-main.f6dae082.js.map",
+    "static/js/2.d6b955a1.chunk.js": "/drip-shop/static/js/2.d6b955a1.chunk.js",
+    "static/js/2.d6b955a1.chunk.js.map": "/drip-shop/static/js/2.d6b955a1.chunk.js.map",
+    "index.html": "/drip-shop/index.html",
+    "precache-manifest.8808c2e5f08e6e0400b692d94c9c88db.js": "/drip-shop/precache-manifest.8808c2e5f08e6e0400b692d94c9c88db.js",
+    "service-worker.js": "/drip-shop/service-worker.js",
+    "static/css/main.3d81fd4e.chunk.css.map": "/drip-shop/static/css/main.3d81fd4e.chunk.css.map",
+    "static/js/2.d6b955a1.chunk.js.LICENSE.txt": "/drip-shop/static/js/2.d6b955a1.chunk.js.LICENSE.txt",
+    "static/media/blank_shirt.png": "/drip-shop/static/media/blank_shirt.4bee4f3a.png",
+    "static/media/logo.svg": "/drip-shop/static/media/logo.8dad8028.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f6dae082.js",
+    "static/js/2.d6b955a1.chunk.js",
+    "static/css/main.3d81fd4e.chunk.css",
+    "static/js/main.ca50c81f.chunk.js"
+  ]
+}
