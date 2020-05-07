@@ -174,7 +174,7 @@ const Cart = () => {
 
               <DailyCart />
 
-              <Box pb={3}>
+              <Box p={10}>
                 <DailySummary />
               </Box>
             </Grid>

@@ -96,8 +96,8 @@ const StoreView = () => {
 
   return (
     <AnimateSharedLayout type="crossfade">
-      <Banner title="Featured" />
-      <Banner title="Popular" />
+      <Banner title="Featured" featured={true} />
+      <Banner title="Categories" />
       <Container
         maxWidth="xl"
         style={{

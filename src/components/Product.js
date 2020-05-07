@@ -51,112 +51,124 @@ const Product = (props) => {
   //       standard:
   //         "https://ih0.redbubble.net/image.412027703.8492/raf%2C220x294%2C075%2Cf%2Ce5d6c5%3Af62bbf65ee.lite-1u1.jpg",
   //     },
-  // const shirtId = featured ? "shirt-featured" + index : "shirt" + index;
-  const shirtId = "shirt" + index;
+  const shirtId = featured ? "shirt-featured" + index : "shirt" + index;
+
   return (
-    <motion.div layoutId={shirtId}>
-      <Card
-        style={{
-          alignItems: "center",
-          flexDirection: "column",
-          width: "100%",
-          maxWidth: "196px",
-          borderRadius: "10px",
-          pointerEvents: "cursor",
-        }}
-        elevation={0}
-        className={classes.root}
-      >
-        <CardActionArea
+    <div
+      style={{
+        background: featured ? "transparent" : "#f0f0f0",
+        borderRadius: "10px",
+      }}
+    >
+      <motion.div layoutId={shirtId}>
+        <Card
           style={{
             alignItems: "center",
             flexDirection: "column",
-            display: "flex",
+            width: "100%",
+
+            maxWidth: featured ? "initial" : "196px",
+            height: featured ? "600px" : "initial",
+            background: featured ? "transparent" : "white",
+            borderRadius: "10px",
+            pointerEvents: "cursor",
           }}
-          onClick={() => {
-            dispatch(
-              setCurrentShirtId({
-                currentShirtId: shirtId,
-                currentShirtTitle: props.title,
-                currentShirtImage: props.image,
-                currentShirtPrice: props.price,
-              })
-            );
-            // navigate(shirtId, { state: props });
-          }}
+          elevation={0}
+          className={classes.root}
         >
-          {/* <div style={{ borderRadius: "10px", background: "#fafafa" }}> */}
-          <div
+          <CardActionArea
             style={{
-              // height: "150px",
-
-              position: "relative",
-              objectFit: "cover",
-              userSelect: "none",
-              borderRadius: "10px",
-
-              userDrag: "none",
+              alignItems: "center",
+              flexDirection: "column",
+              display: "flex",
+            }}
+            onClick={() => {
+              dispatch(
+                setCurrentShirtId({
+                  currentShirtId: shirtId,
+                  currentShirtTitle: props.title,
+                  currentShirtImage: props.image,
+                  currentShirtPrice: props.price,
+                })
+              );
+              // navigate(shirtId, { state: props });
             }}
           >
-            {" "}
-            <motion.img
-              layoutId={shirtId + "image"}
-              src={props.image}
+            {/* <div style={{ borderRadius: "10px", background: "#fafafa" }}> */}
+            <div
               style={{
+                // height: "150px",
+                height: featured ? "200px" : "100%",
+                width: "100%",
+                position: "relative",
+                objectFit: "cover",
                 userSelect: "none",
-                userDrag: "none",
-                pointerEvents: "none",
                 borderRadius: "10px",
-              }}
-              height="100%"
-              width="100%"
-              alt="shirt"
-            />
-            <motion.div
-              layoutId={shirtId + "price"}
-              style={{
-                position: "absolute",
-                bottom: "8px",
-                left: "6px",
-                padding: "5px",
-                borderRadius: "5px",
-                opacity: 0.9,
-                background: "white",
+
+                userDrag: "none",
               }}
             >
-              <Typography
-                variant="subtile1"
+              {" "}
+              <motion.img
+                layoutId={shirtId + "image"}
+                src={props.image}
                 style={{
-                  fontWeight: 650,
-                  fontSize: 16,
-                  fontFamily: "Inter, sans-serif",
+                  userSelect: "none",
+                  userDrag: "none",
+                  pointerEvents: "none",
+                  borderRadius: "10px",
+                  objectFit: "cover",
                 }}
-                color="initial"
-              >
-                ${props?.price}
-              </Typography>
-            </motion.div>
-          </div>
-          {/* </div> */}
-          <CardContent>
-            <motion.div layoutId={shirtId + "title"}>
-              <Typography
-                variant="subtile1"
+                height="100%"
+                width="100%"
+                alt="shirt"
+              />
+              <motion.div
+                layoutId={shirtId + "price"}
                 style={{
-                  fontWeight: 600,
-                  fontSize: 16,
-                  fontFamily: "Inter, sans-serif",
+                  position: "absolute",
+                  bottom: "8px",
+                  left: "6px",
+                  padding: "5px",
+                  borderRadius: "5px",
+                  opacity: 0.9,
+                  background: "white",
                 }}
-                color="initial"
-                gutterBottom
               >
-                {props?.title}
-              </Typography>
-            </motion.div>
-          </CardContent>
-        </CardActionArea>
-      </Card>
-    </motion.div>
+                <Typography
+                  variant="subtile1"
+                  style={{
+                    fontWeight: 650,
+                    fontSize: 16,
+                    fontFamily: "Inter, sans-serif",
+                  }}
+                  color="initial"
+                >
+                  ${props?.price}
+                </Typography>
+              </motion.div>
+            </div>
+            {/* </div> */}
+            <CardContent>
+              <motion.div layoutId={shirtId + "title"}>
+                <Typography
+                  variant="subtile1"
+                  style={{
+                    fontWeight: 600,
+                    fontSize: 16,
+                    fontFamily: "Inter, sans-serif",
+                  }}
+                  color="initial"
+                  gutterBottom
+                >
+                  {props?.title}
+                </Typography>
+              </motion.div>
+            </CardContent>
+          </CardActionArea>
+        </Card>
+      </motion.div>
+    </div>
   );
 };
 

@@ -28,20 +28,27 @@ export default function ({ scale = 1, data, PageContent }) {
         <motion.div
           key={i}
           style={{
-            height: 180 * scale,
+            height: 310 * scale,
             width: 180 * scale,
             borderRadius: 16,
 
             border: "8px solid rgba(255, 255, 255, .15)",
+            // backgroundColor: transform(
+            //   i,
+            //   [0, pageCount - 1],
+            //   ["#fe0689", "#7704ff"]
+            //   // ["#05E5FF", "#FF9605"]
+            // ),
             backgroundColor: transform(
-              i,
-              [0, pageCount - 1],
-              ["#fe0689", "#7704ff"]
-              // ["#05E5FF", "#FF9605"]
+              (i + 1) % 4,
+              [0, 4],
+              // ["#fe0689", "#7704ff"]
+              // ["#05E5FF", "#fafafa"]
+              ["#05E5FF", "#FF9605"]
             ),
           }}
         >
-          <PageContent index={i} {...props} />
+          <PageContent index={i} {...props} featured={true} />
         </motion.div>
       )),
     [scale, data, pageCount]

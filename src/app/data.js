@@ -6,10 +6,12 @@ export const data = [
       "https://images.unsplash.com/photo-1494883759339-0b042055a4ee?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80",
   },
   {
-    price: 43,
+    price: 22,
+    title: "Almighty Ocean Unisex T-Shirt",
     image:
-      "https://images.unsplash.com/photo-1520975439795-26ee45a11903?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2695&q=80",
+      "https://images.unsplash.com/photo-1507114845806-0347f6150324?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80",
   },
+
   {
     price: 22,
     title: "Almighty Ocean Unisex T-Shirt",
@@ -17,7 +19,7 @@ export const data = [
       "https://images.unsplash.com/photo-1508427953056-b00b8d78ebf5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
   },
   {
-    price: 28,
+    price: 24,
     title: "Almighty Ocean Unisex T-Shirt",
     image:
       "https://images.unsplash.com/photo-1553754538-466add009c05?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1495&q=80",
@@ -30,11 +32,12 @@ export const data = [
   },
   {
     title: "Almighty Ocean Unisex T-Shirt",
+    price: 15,
     image:
       "https://images.unsplash.com/photo-1542329799-fa08b82df09c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80",
   },
   {
-    price: 36,
+    price: 28,
     title: "Almighty Ocean Unisex T-Shirt",
     image:
       "https://images.unsplash.com/photo-1552642986-ccb41e7059e7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80",
@@ -57,10 +60,12 @@ export const data = [
     image:
       "https://images.unsplash.com/photo-1553983712-12df6688a7b6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80",
   },
+
   {
-    title: "Almighty Ocean Unisex T-Shirt",
+    price: 43,
+    title: "Osiris Unisex T-Shirt",
     image:
-      "https://images.unsplash.com/photo-1507114845806-0347f6150324?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80",
+      "https://images.unsplash.com/photo-1520975439795-26ee45a11903?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2695&q=80",
   },
   {
     price: 22,
@@ -81,7 +86,7 @@ export const data = [
       "https://images.unsplash.com/photo-1572708609421-8eae59509dec?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80",
   },
   {
-    price: 28,
+    price: 22,
     title: "Almighty Ocean Unisex T-Shirt",
     image:
       "https://images.unsplash.com/photo-1558471952-13cf349a1cc4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80",
@@ -99,16 +104,22 @@ export const data = [
       "https://images.unsplash.com/photo-1566360293735-094226a5df91?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80",
   },
   {
-    price: 28,
+    price: 22,
     title: "Almighty Ocean Unisex T-Shirt",
     image:
       "https://images.unsplash.com/photo-1503341338985-c0477be52513?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
   },
   {
-    price: 28,
+    price: 22,
     title: "Almighty Ocean Unisex T-Shirt",
     image:
       "https://images.unsplash.com/photo-1565128354282-a6390fc125b2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80",
+  },
+  {
+    price: 18,
+    title: "Almighty Ocean Unisex T-Shirt",
+    image:
+      "https://images.unsplash.com/photo-1536243298747-ea8874136d64?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80",
   },
   {
     price: 28,
@@ -123,7 +134,7 @@ export const data = [
       "https://images.unsplash.com/photo-1484517186945-df8151a1a871?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=987&q=80",
   },
   {
-    price: 28,
+    price: 22,
     title: "Almighty Ocean Unisex T-Shirt",
     image:
       "https://images.unsplash.com/photo-1497361727480-725cf2c9427d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80",
@@ -137,7 +148,7 @@ export const data = [
     cat_context: "belt",
   },
   {
-    price: 28,
+    price: 16,
     title: "Almighty Ocean Unisex T-Shirt",
     image:
       "https://images.unsplash.com/photo-1468606069560-ce4e8c1b1fe9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1652&q=80",
@@ -151,14 +162,14 @@ export const data = [
     cat_context: "hat",
   },
   {
-    price: 28,
+    price: 22,
     title: "Almighty Ocean Unisex T-Shirt",
     image:
       "https://images.unsplash.com/photo-1505632958218-4f23394784a6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
     cat_context: "tshirt",
   },
   {
-    price: 28,
+    price: 22,
     title: "Almighty Ocean Unisex T-Shirt",
     image:
       "https://images.unsplash.com/photo-1490551632573-78c6c247f5d3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80",
@@ -200,7 +211,7 @@ export const data = [
     cat_context: "tshirt",
   },
   {
-    price: 28,
+    price: 22,
     title: "Almighty Ocean Unisex T-Shirt",
     image:
       "https://images.unsplash.com/photo-1570472792550-4362980b7009?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=604&q=80",
@@ -4703,5 +4714,35 @@ export const productData = [
     },
     cat_context: "m-tees",
     is_mature_content: false,
+  },
+];
+
+export const categories = [
+  {
+    title: "Shirts",
+    width: "30%",
+    image:
+      "https://images.unsplash.com/photo-1511746315387-c4a76990fdce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
+  },
+  {
+    title: "Pants",
+    height: "100%",
+    image:
+      "https://images.unsplash.com/photo-1556803471-c9eb6d50eb1e?ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80",
+  },
+  {
+    title: "Shoes",
+    image:
+      "https://images.unsplash.com/photo-1558191053-c03db2757e3d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80",
+  },
+  {
+    title: "Jackets",
+    image:
+      "https://images.unsplash.com/photo-1495105787522-5334e3ffa0ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
+  },
+  {
+    title: "Hats",
+    image:
+      "https://images.unsplash.com/photo-1575428652377-a2d80e2277fc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80",
   },
 ];
