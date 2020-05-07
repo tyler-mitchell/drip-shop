@@ -8,11 +8,20 @@ import { Route, Routes } from "react-router-dom";
 import Banner from "../components/Banner";
 import ShirtView from "./ShirtView";
 import StoreView from "./StoreView";
-
+import Button from "@material-ui/core/Button";
+import Badge from "@material-ui/core/Badge";
+import CartIcon from "@material-ui/icons/ShoppingBasketRounded";
+import { useSelector } from "react-redux";
 const Router = () => {
+  const { cart } = useSelector((s) => s.shirt);
   return (
     <div>
-      <AppBar position="fixed" color="transparent" elevation={0}>
+      <AppBar
+        position="fixed"
+        color="transparent"
+        style={{ backgroundColor: "white" }}
+        elevation={0}
+      >
         <Toolbar>
           <Typography
             variant="h6"
@@ -20,6 +29,26 @@ const Router = () => {
           >
             Drip Shop
           </Typography>
+          <div style={{ flexGrow: 1 }} />
+
+          <Button
+            startIcon={
+              <Badge badgeContent={cart.length}>
+                <CartIcon />{" "}
+              </Badge>
+            }
+            variant="text"
+            color="default"
+            size="large"
+            style={{
+              fontFamily: "'Orbitron', sans-serif",
+              textTransform: "none",
+              marginRight: "30px",
+              fontWeight: 650,
+            }}
+          >
+            My Cart
+          </Button>
         </Toolbar>
       </AppBar>
       <Container
