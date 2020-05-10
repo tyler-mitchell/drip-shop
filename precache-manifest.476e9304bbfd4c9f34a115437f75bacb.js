@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d3490a871253510d25be60f3d468bb4d",
+    "revision": "3a3d53c30e9b2ea2075372620de65e02",
     "url": "/drip-shop/index.html"
   },
   {
-    "revision": "3c0fb203c3ff595046cb",
-    "url": "/drip-shop/static/css/main.3d81fd4e.chunk.css"
+    "revision": "53ebd8ae0a6710911368",
+    "url": "/drip-shop/static/css/main.9655d74e.chunk.css"
   },
   {
-    "revision": "31fb837eb380b7ad9a94",
-    "url": "/drip-shop/static/js/2.d6b955a1.chunk.js"
+    "revision": "15eb59f3a7904d979190",
+    "url": "/drip-shop/static/js/2.527a8f4e.chunk.js"
   },
   {
     "revision": "882fee5ad56cfd78b1cc5d94b617aa42",
-    "url": "/drip-shop/static/js/2.d6b955a1.chunk.js.LICENSE.txt"
+    "url": "/drip-shop/static/js/2.527a8f4e.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "3c0fb203c3ff595046cb",
-    "url": "/drip-shop/static/js/main.6c0e6bae.chunk.js"
+    "revision": "53ebd8ae0a6710911368",
+    "url": "/drip-shop/static/js/main.52f07a6d.chunk.js"
   },
   {
     "revision": "af8ee79fe0d7c562cc0e",
